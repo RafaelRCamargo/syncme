@@ -12,8 +12,8 @@ let mqtt;
 export const MqttProvider = (props) => {
   //Variáveis
   const reconnectTimeout = 2000;
-  const host = "broker.hivemq.com";
-  const port = 8001;
+  const host = "test.mosquitto.org";
+  const port = 8081;
 
   const [loaded, setLoaded] = useState(false)
 
