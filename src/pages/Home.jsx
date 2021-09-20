@@ -18,12 +18,12 @@ export default function Home() {
     console.log("Mobile: ", mobileId);
   }, [rootId, mobileId]);
   
-  const handleSendMessage = (message, topic) => {
+  /* const handleSendMessage = (message, topic) => {
     if (loaded) {
       console.log(`Sending Message: ${message}, on topic ${topic}`);
       sendMessage(message, topic);
     } 
-  } 
+  } */ 
 
   return (
     <div className="container-home">
