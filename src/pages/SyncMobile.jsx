@@ -8,8 +8,8 @@ export default function SyncMobile() {
 
   return (
     <div className="container-home">
-      <p className="subtitle-home">Root: {rootId}</p>
-      <p className="subtitle-home">Mobile: {mobileId}</p>
+      <p className="subtitle-home">Root: <strong>{rootId}</strong></p>
+      <p className="subtitle-home">Mobile: <strong>{mobileId}</strong></p>
       <a className="footer-copyrights" href="https://github.com/RafaelRCamargo">© 1900-2021 Rafael R. Camargo</a>
     </div>
   )
