@@ -10,12 +10,14 @@ export const MqttContext = createContext({});
 let mqtt;
 
 export const MqttProvider = (props) => {
-  //Variáveis
+  //Consts
   const reconnectTimeout = 2000;
   const host = "test.mosquitto.org";
   const port = 8081;
 
+  //States
   const [loaded, setLoaded] = useState(false)
+  const [lastMessage, setLastMessage] = useState()
 
   function sendMessage(message, topic) {
     if (message && topic) {
@@ -43,10 +45,9 @@ export const MqttProvider = (props) => {
   }
 
   function onMessageArrived(msg) {
-    //Faz um log da mensagem recebida
-    console.log(
-      `Topic: ${msg.destinationName} \n Message: ${msg.payloadString}`
-    );
+    //Setta o state de lastMessage apartir da mensagem recebida
+    const message = JSON.parse(msg.payloadString)
+    setLastMessage(message.message)
   }
 
   function MQTTConnect() {
@@ -75,7 +76,7 @@ export const MqttProvider = (props) => {
   }
 
   return (
-    <MqttContext.Provider value={{ MQTTConnect, sendMessage, loaded }}>
+    <MqttContext.Provider value={{ MQTTConnect, sendMessage, loaded, lastMessage }}>
       {props.children}
     </MqttContext.Provider>
   );
