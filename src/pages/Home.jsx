@@ -4,7 +4,7 @@ import React, { useEffect, useContext } from "react";
 import QRCode from "react-qr-code";
 
 //Context
-import { MqttContext } from "../context/MqttContext";
+//import { MqttContext } from "../context/MqttContext";
 import { SyncContext } from "../context/SyncContext";
 
 import '../styles/Home.css'
