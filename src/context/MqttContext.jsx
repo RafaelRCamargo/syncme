@@ -63,6 +63,7 @@ export const MqttProvider = (props) => {
       keepAliveInterval: 10,
       onSuccess: onConnect,
       onFailure: onError,
+      useSSL: true
     };
 
     //Return padrão
