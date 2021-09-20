@@ -7,6 +7,8 @@ import QRCode from "react-qr-code";
 import { MqttContext } from "../context/MqttContext";
 import { SyncContext } from "../context/SyncContext";
 
+import '../styles/Home.css'
+
 export default function Home() {
   const { sendMessage, loaded } = useContext(MqttContext);
   const { rootId, mobileId } = useContext(SyncContext);
@@ -24,12 +26,17 @@ export default function Home() {
   } 
 
   return (
-    <div>
-      <button onClick={() => handleSendMessage("Ok!", "syncme")}>AAA</button>
+    <div className="container-home">
+      <h1 className="title-home">SyncMe.</h1>
+      <p className="subtitle-home">A little project based on <strong>syncing desktop</strong> and <strong>mobile browser</strong>, and then interacting themselves</p>
       <QRCode
+        className="qr-home"
         title={`${window.location.host}/sync/${rootId}/${mobileId}`}
         value={`${window.location.host}/sync/${rootId}/${mobileId}`}
+        bgColor="#F2EADF" fgColor="#262523" size="384"
       />
+      {/* <button onClick={() => handleSendMessage("Ok!", "syncme")}>AAA</button> */}
+      <a className="footer-copyrights" href="https://github.com/RafaelRCamargo">© 1900-2021 Rafael R. Camargo</a>
     </div>
   );
 }

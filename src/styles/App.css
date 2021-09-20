@@ -1,0 +1,24 @@
+html, body, *, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+  color: #262523;
+  font-family: 'Lato', sans-serif;
+}
+
+body {
+  background-color: #F2EADF;
+  font-size: 1rem;
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight: 900;
+  font-size: 2rem;
+  font-family: 'Playfair Display', serif
+}
+
+strong {
+  font-size: inherit;
+  font-weight: 700;
+}
