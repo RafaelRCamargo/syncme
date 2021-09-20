@@ -6,8 +6,9 @@ export default function SyncMobile() {
 
   return (
     <div>
-      {mobileId}
-      {rootId}
+      Root: {rootId}
+      <br />
+      Mobile: {mobileId}
     </div>
   )
 }
