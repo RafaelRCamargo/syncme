@@ -10,7 +10,7 @@ import { SyncContext } from "../context/SyncContext";
 import '../styles/Home.css'
 
 export default function Home() {
-  const { sendMessage, loaded } = useContext(MqttContext);
+  //const { sendMessage, loaded } = useContext(MqttContext);
   const { rootId, mobileId } = useContext(SyncContext);
 
   useEffect(() => {
