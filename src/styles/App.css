@@ -3,29 +3,29 @@ html, body, *, *::after, *::before {
   padding: 0;
   box-sizing: border-box;
   font-size: 16px;
-  color: #262523;
+  color: var(--clr-neutral-900);
   font-family: 'Lato', sans-serif;
-  transition: .3s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: var(--misc-transition);
 }
 
 ::selection {
-  background-color: #26252360;
-  color: #F2EADF;
+  background-color: var(--clr-neutral-900-60);
+  color: var(--clr-neutral-100);
 }
 
 body {
-  background-color: #F2EADF;
+  background-color: var(--clr-neutral-100);
   font-size: 1rem;
 }
 
 h1, h2, h3, h4, h5 {
   font-weight: 900;
   font-size: 2rem;
-  font-family: 'Playfair Display', serif
+  font-family: 'Playfair Display', serif;
 }
 
 strong {
   font-size: inherit;
-  font-weight: 00;
+  font-weight: 600;
   text-decoration: underline;
 }

@@ -44,8 +44,7 @@ export default function Home() {
         value={`${window.location.host}/sync/${rootId}/${mobileId}`}
         bgColor="#F2EADF" fgColor="#262523" size={384}
       />
-      <button onClick={() => handleSendMessage("Ok!", "syncme")}>AAA</button>
-      <a className="footer-copyrights" href="https://github.com/RafaelRCamargo" target="_blank" rel="noreferrer">© 1900-2021 Rafael R. Camargo</a>
+      <button onClick={() => handleSendMessage("Ok!", "syncme")}>Test message.</button>
     </div>
   );
 }
