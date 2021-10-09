@@ -21,16 +21,13 @@ export default function SyncMobile() {
 
   useEffect(() => {
     if (loaded) {
-      handleSendMessage(
-        `{"rootId":${rootId}, "mobileId":${mobileId}}`,
-        "syncme"
-      );
+      handleSendMessage(`{"isSync": true}`, "syncme");
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [rootId, mobileId, loaded]);
 
   const handleSendMessage = (message, topic) => {
     if (loaded) {
-      console.log(`Sending Message: ${message}, on topic ${topic}`);
       sendMessage(message, topic);
     }
   };
@@ -39,12 +36,27 @@ export default function SyncMobile() {
     <div className="container-home">
       {rootId && mobileId ? (
         <>
-          <p className="subtitle-home">
-            Mobile: <strong>{mobileId}</strong>
-          </p>
-          <p className="subtitle-home">
-            Root: <strong>{rootId}</strong>
-          </p>
+          <button
+            className="big-boy"
+            onClick={() =>
+              handleSendMessage(
+                `{"rootId": ${rootId}, "mobileId": ${mobileId}, "jump": true, "reset": false}`,
+                "syncme"
+              )
+            }
+          >
+            Jump?
+          </button>
+          <button
+            onClick={() =>
+              handleSendMessage(
+                `{"rootId": ${rootId}, "mobileId": ${mobileId}, "jump": false, "reset": true}`,
+                "syncme"
+              )
+            }
+          >
+            Reset?
+          </button>
         </>
       ) : (
         <>
