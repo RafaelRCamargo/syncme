@@ -22,7 +22,8 @@ export default function SyncDesktop() {
 
   useEffect(() => {
     if (lastMessage) {
-      if (parseInt(lastMessage.rootId) === rootId && parseInt(lastMessage.mobileId) === mobileId) {
+      // eslint-disable-next-line
+      if (lastMessage.rootId == rootId && lastMessage.mobileId == mobileId) {
         if (lastMessage.jump) {
           if (document.querySelector(".dino").classList.length > 1) {
             document.querySelector(".dino").classList.remove("dino--jumping");
